@@ -1,1 +1,26 @@
-{}
+{
+    "baseUrl": "https://test-setup.com/cypressjasmin/wp-admin",
+    "video": false,
+    "viewportHeight":1080,
+    "viewportWidth":1920,
+    "defaultCommandTimout": 12000,
+    "pageLoadTimeout": 120000,
+    "requestTimeout": 120000,
+    "responseTimeout": 120000,
+    "retries": {
+        "runMode": 1,
+        "openMode": 0
+    },
+    "reporter": "cypress-multi-reporters",
+    "reporterOptions": {
+        "reporterEnabled": "mochawesome",
+        "mochawesomeReporterOptions": {
+            "reportDir": "cypress/reports/mocha",
+            "screenshotOnRunFailure": false,
+            "quite": true,
+            "overwrite": false,
+            "html": false,
+            "json": true
+        }
+    }
+}
