@@ -12,3 +12,10 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           start: npm run cy:run
+      - name: Upload Test Reports
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: reports
+          path: reports/mochareports/
+          
