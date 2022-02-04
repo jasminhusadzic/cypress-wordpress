@@ -1,1 +1,1 @@
-# cypress-wordpress test
+# cypress-wordpress
