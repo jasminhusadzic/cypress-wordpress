@@ -31,4 +31,4 @@ Navigate to Actions section, and select Manual Run. Select Run Workflow, choose 
 
 # Reporting
 
-Currently is used Mochawesome report. This report will be automatically generated after every exeucution and it can be found in folder reports inside project. If execution is trigered over Github Actions, reports will be saved as Artifact (report.zip)
+Currently is used Mochawesome report. This report will be automatically generated after every exeucution and it can be found in folder reports inside project. If execution is triggered over Github Actions, reports will be saved as Artifact (report.zip)
