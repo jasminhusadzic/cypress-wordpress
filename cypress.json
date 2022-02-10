@@ -1,5 +1,5 @@
 {
-    "baseUrl": "https://test-setup.com/cypressjasmin/wp-admin",
+    "baseUrl": "https://localhost:4200",
     "video": false,
     "viewportHeight":1080,
     "viewportWidth":1920,
@@ -21,6 +21,28 @@
             "overwrite": false,
             "html": false,
             "json": true
+        }
+    },
+    "env": {
+        
+        "environment": "local",
+
+        "local": {
+            "username":"",
+            "password": ""
+        },
+
+        "dev": {
+            "username":"",
+            "password": ""
+        },
+        "stage": {
+            "username":"Jasmin",
+            "password": "$z6n&0PkZl$G2lIx3mHuvtlA"
+        },
+        "prod": {
+            "username":"",
+            "password": ""
         }
     }
 }

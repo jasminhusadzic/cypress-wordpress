@@ -2,6 +2,10 @@ import { BasePage } from "./base-page";
 
 export class DashboardPage extends BasePage {
 
+    shouldBeLoaded = () => {
+        cy.location('pathname').should('contain', '/wp-admin' );
+    }
+
     adminBar = {
 
         shouldBeVisible: () => {

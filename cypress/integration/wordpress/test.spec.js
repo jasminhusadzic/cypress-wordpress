@@ -7,11 +7,15 @@ describe('Advanced Ads basic plugin checks', () => {
 
     before( () => {
         loginPage.open('/');
+        loginPage.login();
+        dashboardPage.shouldBeLoaded()
+        cy.getWordPressCookies();
     })
 
     beforeEach( () => {
-        cy.reload();
-        loginPage.login({username: 'Jasmin', password: '$z6n&0PkZl$G2lIx3mHuvtlA'});
+        cy.clearWordPressCookies();
+        cy.setWordPressCookies();
+        loginPage.open('/');
     })
     
     it('Verify sections of Dashboard page are loaded properly', () => {
