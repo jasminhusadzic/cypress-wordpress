@@ -2,15 +2,19 @@ import { BasePage } from "./base-page";
 
 export class LoginPage extends BasePage {
 
+   
     
-    login = (options= {username: '', password: ''}) => {
+    login = () => {
+        const env = Cypress.env('environment');
+        const username = Cypress.env(env).username
+        const password = Cypress.env(env).password
         this.usernameInput.should('be.visible')
             .clear()
         cy.wait(500);
-        this.usernameInput.type(options.username);
+        this.usernameInput.type(username);
         this.passwordInput.should('be.visible')
             .clear()
-            .type(options.password);
+            .type(password);
         this.loginButton.should('be.visible')
             .click();
     }
