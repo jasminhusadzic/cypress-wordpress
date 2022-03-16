@@ -1,0 +1,41 @@
+name: Test Run
+on:
+  workflow_dispatch:
+    inputs:
+      type:
+        type: choice
+        description: Select test type
+        required: true
+        options:
+          - "frontend"
+          - "backend"
+      base_url:
+        description: Insert URL
+        default: https://tests.test-setup.com
+        required: true
+      username:
+        description: Insert username 
+        required: false
+      password:
+        description: Insert passwaord 
+        required: false
+
+env:
+  CYPRESS_BASE_URL: ${{ github.event.inputs.base_url }}
+  CYPRESS_INCLUDE_TAGS: ${{ github.event.inputs.type }}
+  CYPRESS_USERNAME: ${{ github.event.inputs.username }}
+  CYPRESS_PASSWORD: ${{ github.event.inputs.password }}
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: Setup
+        run: npm install
+        
+      - name: Test
+        run: echo Dobro je
+        
